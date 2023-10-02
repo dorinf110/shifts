@@ -1,0 +1,9 @@
+{
+  "hosting": [
+    {
+      "target": "shifts",
+      "source": ".",
+      "frameworksBackend": {}
+    }
+  ]
+}

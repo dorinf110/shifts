@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "shiftsbuilder": {
+      "hosting": {
+        "shifts": [
+          "shiftsbuilder"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "shiftsbuilder"
+  }
+}
