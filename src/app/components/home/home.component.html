@@ -1,17 +1,7 @@
-<div id="div_head">
-    <div id="div_img"></div>
-    <!-- <p id="time">Date</p> -->
-    <!-- <h1>Shift Builder</h1> -->
-    <div id="div_btn_head">
-        <button class="btn" id="myshifts">My Shifts</button>
-        <button class="btn" id="addshifts">Add Shift</button>
-        <button class="btn" id="edit_p">Edit profile</button>
-    </div>
-    <p id="user_p">Welcome, <span>{{this.foundUsr.username}}</span></p>
-    <button class ="btn" id="logout" (click)="logout()">Logout</button>
-   
-   
-</div>
+<app-navbar></app-navbar>
+<div id="large">
+   <app-week-shifts></app-week-shifts>
+</div> 
 
 
 

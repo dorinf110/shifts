@@ -1,63 +1,12 @@
-body{
-    position: relative;
-    display:block;
-    
- }
-#div_head{
-    display:flex;
-    flex-direction: row;
-    justify-content: space-between;
-    height: 5dvi;
-    font-size: 20px;
-    align-items: center;
-    background-color: #d6ebf7;
-    border-bottom: 2px solid blue;
- }
-
-#div_img{
-    background-image: url('../../../assets/images/logo.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-    width:5%;
-    height: 100%;
-}
-#usr{
-    width:45%;
-    display:flex;
-}
-#user_p{
-    margin-top: 1%;;
-    width: fit-content;
-    top:0%;
-    display:inline-block;
-}
-
-span{
-    color: rgb(82, 71, 233);
-    font-size: 20px ;
-    font-style: italic;
-}
-
-#div_btn_head{
+#large{
+    /* padding-top: 15%; */
+    background-image:linear-gradient(to bottom, rgba(188, 228, 245, 0.267), rgb(123, 171, 248)),url('../../../assets/images/back2.png');
+    /* background-image: url('../../../assets/images/back2.png'); */
+    background-repeat:no-repeat;
+    background-clip: border-box;
+    background-size:auto ;
     height:100%;
-    display:flex;
-    justify-content: space-evenly;
-    width:40%;
-    align-items: center;
+    width:100%;
+    z-index:2;
+    text-align: center;
 }
-
-.btn{
-    font-size: 18px;
-    padding: 0.2% 0.2%;
-    border-radius: 30%;
-    box-shadow: 2px 2px 3px 3px rgb(131, 131, 192);
-    background-color: rgb(21, 138, 158);
-    color: whitesmoke;
-    height:50%;
-    
- }
-
- #logout{
-    margin-right: 5%;
- }
-

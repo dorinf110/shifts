@@ -42,7 +42,7 @@
                 <mat-label>Username:</mat-label>
                 <input matInput placeholder="username" name="username" id="username" formControlName="username" required>
                 <mat-error *ngIf="username.hasError('required')">Username is required!</mat-error>
-                <mat-error *ngIf="username.hasError('pattern')">Username is  incorrect!</mat-error>
+                <mat-error *ngIf="username.hasError('pattern')">Username is too short!</mat-error>
             </mat-form-field><br>
             <mat-form-field>
                 <mat-label>E-mail:</mat-label>

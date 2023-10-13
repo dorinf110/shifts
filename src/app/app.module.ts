@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, APP_INITIALIZER } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -20,6 +20,15 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { NotifierComponent } from './components/notifier/notifier.component';
 import { DatePipe } from '@angular/common';
+import { NavbarComponent } from './components/navbar/navbar.component';
+import { AddshiftComponent } from './components/addshift/addshift.component';
+import { MyshiftsComponent } from './components/myshifts/myshifts.component';
+import { EditpComponent } from './components/editp/editp.component';
+import { UserService } from './services/user.service';
+import { WeekShiftsComponent } from './components/week-shifts/week-shifts.component';
+import { EditShiftComponent } from './components/edit-shift/edit-shift.component';
+import { MAT_DATE_LOCALE } from '@angular/material/core';
+
 
 
 @NgModule({
@@ -28,7 +37,13 @@ import { DatePipe } from '@angular/common';
     LoginComponent,
     RegisterComponent,
     HomeComponent,
-    NotifierComponent
+    NotifierComponent,
+    NavbarComponent,
+    AddshiftComponent,
+    MyshiftsComponent,
+    EditpComponent,
+    WeekShiftsComponent,
+    EditShiftComponent
   ],
   imports: [
     BrowserModule,
@@ -44,7 +59,7 @@ import { DatePipe } from '@angular/common';
     ReactiveFormsModule,
     MatNativeDateModule
   ],
-  providers: [DatePipe],
+  providers: [DatePipe, { provide: MAT_DATE_LOCALE, useValue: 'ro-RO' }],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

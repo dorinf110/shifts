@@ -49,8 +49,8 @@ export class LoginComponent implements OnInit{
     this.authService.SignIn(email,password).subscribe((data)=>{
       this.showSpinner=false;
       data.then(data=>{
-        this.notifier.showNotification("You are logged in!", "OK", "success",'top');
-        this.router.navigate(['home']);
+        this.notifier.showNotification("You are logged in!", "OK", "success",'bottom');
+        this.router.navigate['\home'];
       }).catch(()=>{
         this.notifier.showNotification("Email or password incorrect!", "OK", "error",'top');
         this.loginForm.reset();

@@ -6,7 +6,6 @@ import { Router } from '@angular/router';
 import { FormGroup, FormControl, Validators, ValidatorFn, AbstractControl } from '@angular/forms';
 import { AuthServiceService } from 'src/app/services/auth-service.service';
 import { NotifierService } from 'src/app/services/notifier.service';
-import { DatePipe, formatDate } from '@angular/common';
 
 
 @Component({
@@ -16,7 +15,7 @@ import { DatePipe, formatDate } from '@angular/common';
 })
 export class RegisterComponent implements OnInit{
   constructor(private userService:UserService, private router:Router, private fireService:UserServiceFirestoreService, 
-    private authService:AuthServiceService, private notifier:NotifierService, private notifier1:NotifierService, private datePipe:DatePipe){
+    private authService:AuthServiceService, private notifier:NotifierService){
   }
   submitted=false;
   showSpinner=false;
@@ -36,7 +35,6 @@ export class RegisterComponent implements OnInit{
       return null
       if(control.value!== checkControl.value){
         checkControl.setErrors({ matching : true});
-        this.notifier1.showNotification("Passwords mismatch!","OK", "error",'top')
         return { matching : true};
       }
       else{
@@ -53,17 +51,9 @@ export class RegisterComponent implements OnInit{
     return null
     }
     const readDob = new Date(control.value);
-    //   if(readDob.toString() =="Invalid Date"){
-    //   control.setErrors({age : true});
-    //   return { age: true};
-    // }
-    // check if age is between 3 and 130 years
     const tob = (new Date(control.value)).getTime();
-    // console.log("tob este; "+tob);
     const currTime = (new Date()).getTime();
-    // console.log("currTime este; "+currTime);
     const diff = (currTime - tob) / 31536000000;
-    // console.log("diff este; "+diff);
     if((currTime - tob) / 31536000000 < 3 || (currTime - tob) / 31536000000 > 130 ){
       control.setErrors({age : true});
       this.notifier.showNotification("Incorrect date of birth! Age should be between 3 and 130 years!","OK","error",'bottom')
@@ -124,9 +114,7 @@ export class RegisterComponent implements OnInit{
 
   register(){
     this.showSpinner=true;
-    this.showMessage=false;
     this.submitted=true;
-
     if(this.registrationForm.invalid){
       return;
     }
@@ -153,11 +141,9 @@ export class RegisterComponent implements OnInit{
     let user:User={firstName,lastName,password,username,birthDate,email};
 
     this.fireService.saveUser(user);
-    // this.router.navigate(['login']);
-
+  
     this.authService.SignUp(email,password).subscribe((data)=>{
       this.showSpinner=false;
-      // this.showMessage=true; 
       this.notifier.showNotification("User successfully registered!","OK","success","top");
     });
   }
@@ -169,6 +155,5 @@ export class RegisterComponent implements OnInit{
     data.map(a=>{
      this.Users.push(a.payload.doc.data());
     })
-     
     })}
 }
