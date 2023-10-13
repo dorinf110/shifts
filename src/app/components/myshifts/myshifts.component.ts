@@ -6,7 +6,6 @@ import { UserServiceFirestoreService } from 'src/app/services/user-service-fires
 import { DispShift } from 'src/app/interfaces/disp-shift';
 import { FormGroup, FormControl } from '@angular/forms';
 import { NotifierService } from 'src/app/services/notifier.service';
-import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
 
 
@@ -18,7 +17,7 @@ import { Router } from '@angular/router';
 })
 export class MyshiftsComponent implements OnInit{
   constructor (private shiftFirestService:ShiftFirestoreService, private userFireStoreServ:UserServiceFirestoreService, private notifier:NotifierService,
-    private userServ:UserService, private router:Router){}
+    private router:Router){}
 
   haveShifts:boolean=false;
   Shifts:any[];
@@ -174,8 +173,6 @@ export class MyshiftsComponent implements OnInit{
      }  
      })
     }
-    
-    
-    };
+   };
   }
 

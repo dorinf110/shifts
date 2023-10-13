@@ -19,12 +19,6 @@ export class HomeComponent implements OnInit{
   constructor(private router:Router, private authService:AuthServiceService, private notifier:NotifierService, 
     private fireService:UserServiceFirestoreService, public user:UserService, private shiftFirestService:ShiftFirestoreService){}
     
-  logUser:string="";
-  logUsrId:string;
-  Users:any[];
-  usrShifts:any[];
-  mostProfMonth:string="";
-  
   ngOnInit(): void {
     // this.usrShifts = this.shiftFirestService.getUserShifts();
     // console.log("Shiftturi aduse din service: " + JSON.stringify(this.usrShifts));

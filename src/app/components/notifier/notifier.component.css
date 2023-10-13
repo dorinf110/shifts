@@ -12,3 +12,11 @@
     background: blue ;
     color: white;
 }
+
+.content-style{
+    border: 1px solid white;
+    border-radius: 4px;
+    padding: 5px;
+    margin-top:5px;
+    margin-bottom:5px;
+}

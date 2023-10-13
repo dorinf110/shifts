@@ -24,7 +24,6 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { AddshiftComponent } from './components/addshift/addshift.component';
 import { MyshiftsComponent } from './components/myshifts/myshifts.component';
 import { EditpComponent } from './components/editp/editp.component';
-import { UserService } from './services/user.service';
 import { WeekShiftsComponent } from './components/week-shifts/week-shifts.component';
 import { EditShiftComponent } from './components/edit-shift/edit-shift.component';
 import { MAT_DATE_LOCALE } from '@angular/material/core';
