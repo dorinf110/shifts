@@ -40,10 +40,13 @@ ngOnInit(): void {
   let today = new Date();
   // today.setHours(0,0,0);
   let todayUT = today.getTime();
-  let dayOfWeek=today.getUTCDay();//3
-  let firstDayOfTheWeekUT = todayUT - (dayOfWeek * (24 * 3600 * 1000));
+  let dayOfWeek=today.getDay();//3
+  // let firstDayOfTheWeekUT = todayUT - (dayOfWeek * (24 * 3600 * 1000));
   // let endDayOfTheWeekUT = firstDayOfTheWeekUT + (6 * 24 * 3600 * 1000);
-  
+  let firstDayOfTheWeek = new Date();
+  firstDayOfTheWeek.setDate(today.getDate()-dayOfWeek);
+  firstDayOfTheWeek.setHours(0,0,0);
+  let firstDayOfTheWeekUT = firstDayOfTheWeek.getTime();
   let item = localStorage.getItem("loggedUser");
   if(item){
     let logUsrEmail = JSON.parse(item).email;
