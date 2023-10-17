@@ -1,6 +1,7 @@
 <app-navbar ></app-navbar>
 <div id="large">
 <div *ngIf="haveShifts" id="table" class="mat-elevation-z3">
+    <h2 style="text-align:center">My Shifts</h2>
     <div width="100%" id="form">
        <table mat-table [dataSource]="dataSource">
         <ng-container matColumnDef="date">
