@@ -113,7 +113,6 @@ export class MyshiftsComponent implements OnInit{
   }
 
   clickedRow(row){
-    console.log("Clicked row is: " + JSON.stringify(row));
     this.shiftFirestService.setClickedRow(row);
     this.router.navigate(['/edit-shift']);
   } 

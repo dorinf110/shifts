@@ -121,7 +121,7 @@ export class EditShiftComponent implements OnInit{
     this.clickedRow=this.shiftServ.getClickedRow();
     // this.clickedRowStr=JSON.stringify(this.clickedRow);
     this.clickedRowId = this.clickedRow.shiftId;
-    console.log(JSON.stringify(this.clickedRowId));
+    // console.log(JSON.stringify(this.clickedRowId));
     this.usrShifts= this.shiftServ.getUserShifts();
     // this.usrShiftsStr=JSON.stringify(this.usrShifts);
     this.shiftToEdit = this.usrShifts.find( x=>{

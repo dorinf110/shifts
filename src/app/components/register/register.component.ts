@@ -19,10 +19,9 @@ export class RegisterComponent implements OnInit{
   }
   submitted=false;
   showSpinner=false;
-  showMessage=false;
   Users:any=[];
   id:any='';
-  now:Date=new Date();
+  
 
   // custom validator to check passwords matching
   matching(controlName:string, checkControlName:string):ValidatorFn {
@@ -50,10 +49,10 @@ export class RegisterComponent implements OnInit{
     if(control==null){
     return null
     }
-    const readDob = new Date(control.value);
+    // const readDob = new Date(control.value);
     const tob = (new Date(control.value)).getTime();
     const currTime = (new Date()).getTime();
-    const diff = (currTime - tob) / 31536000000;
+    // const diff = (currTime - tob) / 31536000000;
     if((currTime - tob) / 31536000000 < 3 || (currTime - tob) / 31536000000 > 130 ){
       control.setErrors({age : true});
       this.notifier.showNotification("Incorrect date of birth! Age should be between 3 and 130 years!","OK","error",'bottom')
@@ -126,7 +125,7 @@ export class RegisterComponent implements OnInit{
     let birthDate=(this.registrationForm.value['birthDate'].getTime());
     let username=this.registrationForm.value['username'];
     
-    // check if the emeil entered is already used by another user
+    // check if the email entered is already used by another user
     let existEmailUser = this.Users.find((x: { email: string; })=>{
       return x.email === email;
     });

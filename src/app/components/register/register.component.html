@@ -16,13 +16,13 @@
             </mat-form-field><br>
             <mat-form-field>
                 <mat-label>Password:</mat-label>
-                <input matInput placeholder="password" name="password" id="password" formControlName="password" required>
+                <input matInput placeholder="password" name="password" id="password" formControlName="password" required type="password">
                 <mat-error *ngIf="password.hasError('required')">Password is required!</mat-error>
                 <mat-error *ngIf="password.hasError('pattern')">Password is weak!</mat-error>
             </mat-form-field><br>
             <mat-form-field>
                 <mat-label>Confirm password:</mat-label>
-                <input matInput placeholder="passwordConf" name="passwordConf" id="passwordConf" formControlName="passwordConf" required>
+                <input matInput placeholder="passwordConf" name="passwordConf" id="passwordConf" formControlName="passwordConf" required type="password">
                 <mat-error *ngIf="passwordConf.hasError('required')">Password is required!</mat-error>
                 <mat-error *ngIf="passwordConf.hasError('pattern')">Password is weak!</mat-error>
             </mat-form-field><br>

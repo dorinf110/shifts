@@ -7,6 +7,6 @@
             <button   id="edit_p" routerLink='/edit' mat-raised-button id="btn_log" color="primary">Edit profile</button>
         
     </div>
-    <p id="user_p">Hello, <span>{{logUser['user']['username']}}</span></p>
+    <p id="user_p">Hello, <span>{{logUser.user['username']}}</span></p>
     <button class ="btn" id="logout" (click)="logout()" mat-raised-button color="primary">Logout</button>
 </div>
